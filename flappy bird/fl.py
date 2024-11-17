@@ -45,6 +45,24 @@ def maingame():
     playerx = int(SCREENWIDTH/5)
     playery= int(SCREENWIDTH/2)
     basex = 0
+    # create two pipes for blinting on the screen
+    newPipe1 = getRandomPipe()
+    newPipe2=getRandompipe()
+
+def getRandomPipe():
+    ---
+    generates position of two pipes(one bottom straight and one top rotated)for blitting the SCREEN
+    ---
+    pipeheight = GAME_SPRITES['pipe'][0].get_height();
+    offset=SCREENHEIGHT/3;
+    y2=offset+random.randrange(0,int(SCREENHEIGHT-GAME_SPRITES['base'].get_height()- 1.2*offset)) 
+    pipex=SCREENWIDTH+10
+    y1=pipeheight-y2+offset
+    pipe =(
+        ('x':pipex,'y':y1)#upper pipe
+        ('x':pipex,'y':y2)#lower pipe
+           ) 
+        return pipe     
                     
                 
 
