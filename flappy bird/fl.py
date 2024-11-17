@@ -1,7 +1,7 @@
 import random # for generating random numbers
 import sys # we will use sys.exit to exit the program
 import pygame
-from import pygame .locals import *  # basic pygame imports
+from pygame.locals import *  # basic pygame imports
 
 #global variables for the game 
 FPS = 32
@@ -15,10 +15,9 @@ PLAYER = 'gallery/sprites/bird.png'
 BACKGROUND = 'gallery/sprites/background.png'
 PIPE = 'gallery/sprites/pipe.png'
 def welcomeScreen():
-    ...
-
+    '''
     shows welcome images on the screen 
-    ...
+    '''
     playerx = int(SCREENWIDTH())
     playery = int((SCREENHEIGHT - GAME_SPRITES['player'].get_height())/2)
     messagex = int((SCREENWIDTH - GAME_SPRITES['message'].get_width()))/2
