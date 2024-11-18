@@ -27,18 +27,18 @@ def welcomeScreen():
     while True:
         for event in pygame.event.get():
             # if user clicks on cross button close the game
-            if event.type == QUIT or (event.type== KEYDOWN and event.key==K_ESCAPE):
+            if event.type == QUIT or (event.type==KEYDOWN and event.key == K_ESCAPE):
                 pygame.quit()
-            sys.exit()
-            # if the user presses space or upkey start the game for them
+                sys.exit()
 
-        if event.type==KEYDOWN and (event.key==K_SPACE or event.key == K_UP):
-            return
-         elif:
-                SCREEN.blit(GAME_SPRITES['background'],(0,0))
-                SCREEN.blit(GAME_SPRITES['player'],(playerx,playery))
-                SCREEN.blit(GAME_SPRITES['message'],(messagex,messagey))
-                SCREEN.blit(GAME_SPRITES['base'],(basex,GROUNDY))
+            # If the user presses space or up key, start the game for them
+            elif event.type==KEYDOWN and (event.key==K_SPACE or event.key == K_UP):
+                return
+            else:
+                SCREEN.blit(GAME_SPRITES['background'], (0, 0))    
+                SCREEN.blit(GAME_SPRITES['player'], (playerx, playery))    
+                SCREEN.blit(GAME_SPRITES['message'], (messagex,messagey ))    
+                SCREEN.blit(GAME_SPRITES['base'], (basex, GROUNDY))    
                 pygame.display.update()
                 FPSCLOCK.tick(FPS)
 
@@ -175,9 +175,9 @@ def getRandomPipe():
     y1=pipeheight-y2+offset
 
     pipe = [
-        {'x':pipex,'y':-y1}#upper pipe
-        {'x':pipex,'y':y2}#lower pipe
-        ]
+        {'x': pipex, 'y': -y1}, #upper Pipe
+        {'x': pipex, 'y': y2} #lower Pipe
+    ]
        
     
      
@@ -186,22 +186,22 @@ def getRandomPipe():
                 
 
 
-if_name_ == "_main_": # type: ignore
+if __name__ == "__main__": # type: ignore
 # This will be our main point from where our game will start
-pygame.init()# Initialize all pygame's module
+  pygame.init()# Initialize all pygame's module
 FPSCLOCK = pygame.time.Clock()
-pygame.display.pygame.display.set_caption(title, icontitle=None)
+pygame.display.set_caption('made by tanduu')
 GAME_SPRITES['numbers']= (
-    pygame.image.load('gallery/sprites/0.png').pygame.Surface.convert_alpha(),
-    pygame.image.load('gallery/sprites/1.png').pygame.Surface.convert_alpha(),
-    pygame.image.load('gallery/sprites/2.png').pygame.Surface.convert_alpha(),
-    pygame.image.load('gallery/sprites/3.png').pygame.Surface.convert_alpha(),
-    pygame.image.load('gallery/sprites/4.png').pygame.Surface.convert_alpha(),
-    pygame.image.load('gallery/sprites/5.png').pygame.Surface.convert_alpha(),
-    pygame.image.load('gallery/sprites/6.png').pygame.Surface.convert_alpha(),
-    pygame.image.load('gallery/sprites/7.png').pygame.Surface.convert_alpha(),
-    pygame.image.load('gallery/sprites/8.png').pygame.Surface.convert_alpha(),
-    pygame.image.load('gallery/sprites/9.png').pygame.Surface.convert_alpha(),
+    pygame.image.load('gallery/sprites/0.png').convert_alpha(),
+    pygame.image.load('gallery/sprites/1.png').convert_alpha(),
+    pygame.image.load('gallery/sprites/2.png').convert_alpha(),
+    pygame.image.load('gallery/sprites/3.png').convert_alpha(),
+    pygame.image.load('gallery/sprites/4.png').convert_alpha(),
+    pygame.image.load('gallery/sprites/5.png').convert_alpha(),
+    pygame.image.load('gallery/sprites/6.png').convert_alpha(),
+    pygame.image.load('gallery/sprites/7.png').convert_alpha(),
+    pygame.image.load('gallery/sprites/8.png').convert_alpha(),
+    pygame.image.load('gallery/sprites/9.png').convert_alpha(),
 )
 GAME_SPRITES['message'] = pygame.image.load('flappy bird/GALLERY/SPRITES/welcome.png').pygame.Surface.convert_alpha()
 GAME_SPRITES['base'] = pygame.image.load('gallery/sprites/notbase.png').pygame.Surface.convert_alpha()
