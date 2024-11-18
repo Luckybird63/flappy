@@ -12,14 +12,14 @@ SCREEN  = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 GROUNDY = SCREENHEIGHT * 0.8
 GAME_SPRITES = {}
 GAME_SOUNDS = {}
-PLAYER = 'gallery/sprites/flappybird.png'
-BACKGROUND = 'gallery/sprites/background.png'
-PIPE = 'gallery/sprites/pipe.png'
+PLAYER = 'flappy bird/gallery/sprites/flappybird.png'
+BACKGROUND = 'flappy bird/gallery/sprites/background.png'
+PIPE = 'flappy bird/gallery/sprites/pipe.png'
 def welcomeScreen():
     '''
     shows welcome images on the screen 
     '''
-    playerx = int(SCREENWIDTH())
+    playerx = int(SCREENWIDTH/5)
     playery = int((SCREENHEIGHT - GAME_SPRITES['player'].get_height())/2)
     messagex = int((SCREENWIDTH - GAME_SPRITES['message'].get_width()))/2
     messagey = int((SCREENHEIGHT *0.13))
@@ -192,29 +192,29 @@ if __name__ == "__main__": # type: ignore
 FPSCLOCK = pygame.time.Clock()
 pygame.display.set_caption('made by tanduu')
 GAME_SPRITES['numbers']= (
-    pygame.image.load('gallery/sprites/0.png').convert_alpha(),
-    pygame.image.load('gallery/sprites/1.png').convert_alpha(),
-    pygame.image.load('gallery/sprites/2.png').convert_alpha(),
-    pygame.image.load('gallery/sprites/3.png').convert_alpha(),
-    pygame.image.load('gallery/sprites/4.png').convert_alpha(),
-    pygame.image.load('gallery/sprites/5.png').convert_alpha(),
-    pygame.image.load('gallery/sprites/6.png').convert_alpha(),
-    pygame.image.load('gallery/sprites/7.png').convert_alpha(),
-    pygame.image.load('gallery/sprites/8.png').convert_alpha(),
-    pygame.image.load('gallery/sprites/9.png').convert_alpha(),
+    pygame.image.load('flappy bird/gallery/sprites/0.png').convert_alpha(),
+    pygame.image.load('flappy bird/gallery/sprites/1.png').convert_alpha(),
+    pygame.image.load('flappy bird/gallery/sprites/2.png').convert_alpha(),
+    pygame.image.load('flappy bird/gallery/sprites/3.png').convert_alpha(),
+    pygame.image.load('flappy bird/gallery/sprites/4.png').convert_alpha(),
+    pygame.image.load('flappy bird/gallery/sprites/5.png').convert_alpha(),
+    pygame.image.load('flappy bird/gallery/sprites/6.png').convert_alpha(),
+    pygame.image.load('flappy bird/gallery/sprites/7.png').convert_alpha(),
+    pygame.image.load('flappy bird/gallery/sprites/8.png').convert_alpha(),
+    pygame.image.load('flappy bird/gallery/sprites/9.png').convert_alpha(),
 )
-GAME_SPRITES['message'] = pygame.image.load('flappy bird/GALLERY/SPRITES/welcome.png').pygame.Surface.convert_alpha()
-GAME_SPRITES['base'] = pygame.image.load('gallery/sprites/notbase.png').pygame.Surface.convert_alpha()
-GAME_SPRITES['pipe'] = ( pygame.transform.rotate(pygame.image.load((PIPE).pygame.Surface.convert_alpha() ,180)),
-    pygame.image.load(PIPE).pygame.Surface.convert_alpha()
+GAME_SPRITES['message'] = pygame.image.load('flappy bird/GALLERY/SPRITES/welcome.png').convert_alpha()
+GAME_SPRITES['base'] = pygame.image.load('flappy bird/gallery/sprites/notbase.png').convert_alpha()
+GAME_SPRITES['pipe'] = ( pygame.transform.rotate(pygame.image.load(PIPE).convert_alpha() ,180),
+    pygame.image.load(PIPE).convert_alpha()
 )
 
 # Game sounds
-GAME_SOUNDS['die'] = pygame.image.load('flappy bird/GALLERY/AUDIO')
-GAME_SOUNDS['hit'] = pygame.image.load('gallery/sprites/hit.mp3')
-GAME_SOUNDS['point'] = pygame.image.load('gallery/sprites/point.mp3')
-GAME_SOUNDS['swoosh'] = pygame.image.load('gallery/sprites/swoosh.mp3')
-GAME_SOUNDS['wing']    = pygame.image.load('gallery/sprites/wing.mp3')
+GAME_SOUNDS['die'] = pygame.mixer.Sound('flappy bird/gallery/audio/die.mp3')
+GAME_SOUNDS['hit'] = pygame.mixer.Sound('flappy bird/gallery/audio/hit.mp3')
+GAME_SOUNDS['point'] = pygame.mixer.Sound('flappy bird/gallery/audio/point.mp3')
+GAME_SOUNDS['swoosh'] = pygame.mixer.Sound('flappy bird/gallery/audio/swoosh.mp3')
+GAME_SOUNDS['wing']    = pygame.mixer.Sound('flappy bird/gallery/audio/wing.mp3')
 GAME_SPRITES['background'] = pygame.image.load(BACKGROUND).convert()
 GAME_SPRITES['player']    = pygame.image.load(PLAYER).convert_alpha()
 while True:
