@@ -6,8 +6,8 @@ from pygame.locals import *  # basic pygame imports
 
 #global variables for the game 
 FPS = 32
-SCREENWIDTH = 289
-SCREENHEIGHT = 511
+SCREENWIDTH = 290
+SCREENHEIGHT = 520
 SCREEN  = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 GROUNDY = SCREENHEIGHT * 0.8
 GAME_SPRITES = {}
@@ -50,7 +50,7 @@ def maingame():
     basex = 0
     # create two pipes for blinting on the screen
     newPipe1 = getRandomPipe()
-    newPipe2=getRandomPipe()
+    newPipe2= getRandomPipe()
  # my List of upper pipes
     upperPipes = [
         {'x': SCREENWIDTH+200, 'y':newPipe1[0]['y']},
@@ -168,9 +168,9 @@ def getRandomPipe():
     '''
     generates position of two pipes(one bottom straight and one top rotated)for blitting the SCREEN
     '''
-    pipeheight = GAME_SPRITES['pipe'][0].get_height();
-    offset=SCREENHEIGHT/3;
-    y2=offset+random.randrange(0,int(SCREENHEIGHT-GAME_SPRITES['base'].get_height()- 1.2*offset)) 
+    pipeheight = GAME_SPRITES['pipe'][0].get_height()
+    offset=SCREENHEIGHT/3
+    y2=offset + random.randrange(0, int(SCREENHEIGHT-GAME_SPRITES['base'].get_height()- 1.2 *offset)) 
     pipex=SCREENWIDTH+10
     y1=pipeheight-y2+offset
 
@@ -204,7 +204,7 @@ GAME_SPRITES['numbers']= (
     pygame.image.load('flappy bird/gallery/sprites/9.png').convert_alpha(),
 )
 GAME_SPRITES['message'] = pygame.image.load('flappy bird/GALLERY/SPRITES/welcome.png').convert_alpha()
-GAME_SPRITES['base'] = pygame.image.load('flappy bird/gallery/sprites/notbase.png').convert_alpha()
+GAME_SPRITES['base'] = pygame.image.load('flappy bird/gallery/sprites/base.png').convert_alpha()
 GAME_SPRITES['pipe'] = ( pygame.transform.rotate(pygame.image.load(PIPE).convert_alpha() ,180),
     pygame.image.load(PIPE).convert_alpha()
 )
